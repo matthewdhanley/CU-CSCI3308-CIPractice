@@ -177,6 +177,17 @@ START_TEST(test_2d_area_triangle)
     printf("%f\n",known_area);
     ck_assert(known_area==test_area);
 
+    a.x = 0;
+    a.y = 0;
+    b.x = 1;
+    b.y = 0;
+    c.x = -1;
+    c.y = 1;
+    test_area = coord_2d_area_triangle(&a, &b, &c);
+    known_area = 0.5 * b.x * c.y;
+    printf("%f\n",known_area);
+    ck_assert(known_area==test_area);
+
 }
 END_TEST
 
